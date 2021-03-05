@@ -1,0 +1,12 @@
+
+body {
+    font-size: 20px;
+    color: #212529;
+    font-family: 'Lora', 'Times New Roman', serif;
+    background-color: #0085A1;
+  }
+  
+  .accounts-margin {
+    margin-top: 400px;
+    padding-top: 400px;
+  }

@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
+from django.conf import settings
+from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
@@ -28,4 +30,4 @@ urlpatterns = [
     url(r'^veterinario/',include('veterinario.urls', namespace='veterinario')),
     url(r'^mascota/',include('mascota.urls', namespace='mascota')),
 
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

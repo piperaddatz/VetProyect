@@ -7,6 +7,8 @@ from django.shortcuts import get_object_or_404
 from django.views import generic
 from veterinario.models import Veterinario
 from . import models
+
+from braces.views import SelectRelatedMixin 
 # Create your views here.
 
 class CreateVet(LoginRequiredMixin,generic.CreateView):
@@ -27,7 +29,17 @@ class SingleVet(generic.DetailView):
 class ListVet(generic.ListView):
     model = Veterinario     
 
-    
+
+   
+
+class DeleteVet(generic.DeleteView):
+    model = Veterinario
+    success_url = reverse_lazy("veterinario:all")
+
+
+
+
+
             
 class JoinGroup(LoginRequiredMixin, generic.RedirectView):
 

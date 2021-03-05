@@ -18,36 +18,41 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
-    <link rel="stylesheet" href="{% static 'VetProyect/css/master.css'%}">
+ 
+    <link rel="stylesheet" href="{% static 'VetProyect/css/master.css' %}">
+    <link rel="stylesheet" href="{% static 'VetProyect/css/styles.css' %}">
+ 
+   
 
 </head>
 
 <body>
 
-    <nav class="navbar  mynav" role="navigation" id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-
-    <a class="navbar-brand mynav" href="{% url 'home' %}">Vet Digital</a>
-
-                <ul class="nav navbar-nav navbar-right">
+            <a class="navbar-brand js-scroll-trigger" href="{% url 'home' %}"> Vet Digital </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ml-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
                     {% if user.is_authenticated %}
-              <li><a href="{% url 'veterinario:all' %}" class="btn btn-simple">Ver Veterinarios</a></li>
-              <li><a href="{% url 'veterinario:create' %}" class="btn btn-simple">Crear Veterinario</a></li>
-              <li><a href="{% url 'mascota:create' %}" class="btn btn-simple">Crear Mascota</a></li>
-              <li><a href="#" class="btn btn-simple">Create Group</a></li>
-              <li><a href="{% url 'accounts:logout' %}" class="btn btn-simple">Log out</a></li>
-                    {% else %}
-                          <li><a href="#"class="btn btn-simple">Groups</a></li>
-                          <li><a href="{% url 'accounts:login' %}" class="btn btn-simple">Log in</a></li>
-                          <li><a href="{% url 'accounts:signup' %}" class="btn btn-simple">Sign up</a></li>
-                    {% endif %}
+                    <li><a href="{% url 'veterinario:all' %}" class="btn btn-simple">Ver Veterinarios</a></li>
+                    <li><a href="{% url 'veterinario:create' %}" class="btn btn-simple">Crear Veterinario</a></li>
+                    <li><a href="{% url 'mascota:create' %}" class="btn btn-simple">Crear Mascota</a></li>
+                    <li><a href="#" class="btn btn-simple">Create Group</a></li>
+                    <li><a href="{% url 'accounts:logout' %}" class="btn btn-simple">Log out</a></li>
+                          {% else %}
+                                <li><a href="#"class="btn btn-simple">About Us</a></li>
+                                <li><a href="{% url 'accounts:login' %}" class="btn btn-simple">Log in</a></li>
+                                <li><a href="{% url 'accounts:signup' %}" class="btn btn-simple">Sign up</a></li>
+                          {% endif %}
                 </ul>
-
-
-
+            </div>
         </div>
     </nav>
-<div class="container mycontent">
+
 
 
 
